@@ -1,13 +1,13 @@
 import java.util.*;
 //Node class
-public class Node {
+public class Node{
     int data;
     Node next;
 }
 
 //main class
-public class LinkedList {
-    public static void main(String[] args) {
+public class LinkedList{
+    public static void main(String[] args){
         Linklist list=new Linklist();
         list.insert(3);
         list.insert(9);
@@ -22,7 +22,7 @@ public class LinkedList {
 }
 
 //link class
-public class Linklist {
+public class Linklist{
     Node head;
     public void insert(int data){
         Node node=new Node();
@@ -52,9 +52,9 @@ public class Linklist {
         if(index==0){
             insertAt(node.data);
         }
-        else {
+        else{
             Node n = head;
-            for (int i=0;i<index-1;i++) {
+            for (int i=0;i<index-1;i++){
                 n = n.next;
             }
             node.next = n.next;
@@ -65,10 +65,10 @@ public class Linklist {
         if(index==0){
             head=head.next;
         }
-        else {
+        else{
             Node n = head;
             Node n1 = null;
-            for (int i = 0; i < index - 1; i++) {
+            for (int i=0;i<index-1;i++){
                 n = n.next;
             }
             n1 = n.next;
