@@ -8,15 +8,14 @@ public class Node {
 //main class
 public class LinkedList {
     public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
-        System.out.println("Enter the three Data:");
-        int data=sc.nextInt();
-        int data2=sc.nextInt();
-        int data3=sc.nextInt();
         Linklist list=new Linklist();
-        list.insert(data);
-        list.insert(data2);
-        list.insert(data3);
+        list.insert(3);
+        list.insert(9);
+        list.insert(10);
+        list.insert(12);
+        list.insertAt(1);
+        list.insertindex(6,2);
+        list.deleteAt(2);
         list.show();
 
     }
@@ -37,6 +36,43 @@ public class Linklist {
                 n=n.next;
             }
             n.next=node;
+        }
+    }
+    public void insertAt(int data){
+        Node node=new Node();
+        node.data=data;
+        node.next=null;
+        node.next=head;
+        head=node;
+    }
+    public void insertindex(int data,int index){
+        Node node=new Node();
+        node.data=data;
+        node.next=null;
+        if(index==0){
+            insertAt(node.data);
+        }
+        else {
+            Node n = head;
+            for (int i=0;i<index-1;i++) {
+                n = n.next;
+            }
+            node.next = n.next;
+            n.next = node;
+        }
+    }
+    public void deleteAt(int index){
+        if(index==0){
+            head=head.next;
+        }
+        else {
+            Node n = head;
+            Node n1 = null;
+            for (int i = 0; i < index - 1; i++) {
+                n = n.next;
+            }
+            n1 = n.next;
+            n.next = n1.next;
         }
     }
     public void show(){
